@@ -14,7 +14,7 @@ Example
 -------
 Below is an example usage of this library that demonstrates how to configure the equality comparer for `System.Double` to round each value prior to comparing the values.  One non-obvious feature that **I'd like to point out** is that assigning a custom default `EqualityComparer<T>` for a given type automatically applies a modification to the default `Comparer<T>` to ensure compatibility.  The rule is: for any two `T` values, `x` and `y`, if `EqualityComparer<T>.Default.Equals(x,y) == true` then `Comparer<T>.Default.Compare(x,y) == 0`.
 
-*WARNING: Please understand that this example is contrived solely for the purpose of demonstration, and that altering the way that primitives work is almost certainly a terrible idea.  This library applies modifications at the level of the entire **`AppDomain`** and could potentially affect the functionality of any and all referenced assemblies.*
+*WARNING: Please understand that this example is contrived solely for the purpose of demonstration, and that altering the way that primitives work is almost certainly a terrible idea.  This library applies modifications at the level of the entire `AppDomain` and could potentially affect the functionality of any and all referenced assemblies.*
   
         void Main()
 	{	
