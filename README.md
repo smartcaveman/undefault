@@ -8,7 +8,10 @@ Injection points are provided for assigning a custom implementation to `Equality
 
 Inspiration
 -----------
-I wrote the code for the initial commit in response to [a stackoverflow question](http://stackoverflow.com/questions/7633260/typedelegator-equality-inconsistency/13559804#13559804) with concerns about inconsistencies in how .NET's default `IEqualityComparer<Type>` handles equality.  Specifically, the default implementation is asymmetrical, which violates the [definition of equality](http://en.wikipedia.org/wiki/Equality_(mathematics)).  My stackoverflow answer provides some explanation of this code and its usage, but I have made a few changes to the API prior to publishing on GitHub.   
+I wrote the code for the initial commit in response to [a stackoverflow question][StackOverflowQuestion] with concerns about inconsistencies in how .NET's default `IEqualityComparer<Type>` handles equality.  Specifically, the default implementation is asymmetrical, which violates the [definition of equality][EqualityDefinition].  My stackoverflow answer provides some explanation of this code and its usage, but I have made a few changes to the API prior to publishing on GitHub.   
+
+[StackOverflowQuestion]:http://stackoverflow.com/questions/7633260/typedelegator-equality-inconsistency/13559804#13559804
+[EqualityDefinition]:http://en.wikipedia.org/wiki/Equality_(mathematics)
 
 Example
 -------
