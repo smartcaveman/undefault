@@ -16,7 +16,8 @@ Below is an example usage of this library that demonstrates how to configure the
 
 *WARNING: Please understand that this example is contrived solely for the purpose of demonstration, and that altering the way that primitives work is almost certainly a terrible idea.  This library applies modifications at the level of the entire `AppDomain` and could potentially affect the functionality of any and all referenced assemblies.*
   
-        void Main()
+  
+	void Main()
 	{	
 		var array = new []{ 0.8d, 1.55d, 2.2d };
 		
