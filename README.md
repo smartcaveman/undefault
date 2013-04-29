@@ -30,7 +30,7 @@ Below is an example usage of this library that demonstrates how to configure the
 		
 		Undefault
 			.ComparisonConfigurator
-			.ConfigureEqualityComparer<double>(new RoundingEqualityComparer());
+			.Configure<double>(new RoundingEqualityComparer());
 		
 		Console.WriteLine(array.Contains(2d));  // True
 		Console.WriteLine(Array.IndexOf(array,2d));  // 1 
@@ -46,4 +46,4 @@ Below is an example usage of this library that demonstrates how to configure the
 
 The library also provides a method for reverting configurations back to the .NET defaults:
 
-		Undefault.ComparisonConfigurator.RevertConfigurationFor<double>();
+		Undefault.ComparisonConfigurator.Revert<double>();
