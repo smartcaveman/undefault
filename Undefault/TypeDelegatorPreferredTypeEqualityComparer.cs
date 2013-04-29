@@ -26,7 +26,7 @@ namespace Undefault
         {
             if (!Equals(Default, GetInstance()))
             {
-                ComparisonConfigurator.ConfigureEqualityComparer(Instance);
+                ComparisonConfigurator.Configure(Instance);
             }
         }
 

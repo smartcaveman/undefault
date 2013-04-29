@@ -16,7 +16,7 @@ namespace Undefault
             ConfiguredEqualityComparerTypes = new HashSet<Type>();
         }
 
-        public static void ConfigureEqualityComparer<T>(IEqualityComparer<T> equalityComparer)
+        public static void Configure<T>(IEqualityComparer<T> equalityComparer)
         {
             Contract.Requires<ArgumentNullException>(!ReferenceEquals(equalityComparer, null));
             if (EqualityComparer<IEqualityComparer<T>>.Default.Equals(EqualityComparer<T>.Default, equalityComparer))
@@ -29,7 +29,7 @@ namespace Undefault
             }
         }
 
-        public static void ConfigureComparer<T>(IComparer<T> comparer)
+        public static void Configure<T>(IComparer<T> comparer)
         {
             Contract.Requires<ArgumentNullException>(!ReferenceEquals(comparer, null));
             if (Equals(Comparer<T>.Default, comparer)) return;
@@ -41,7 +41,13 @@ namespace Undefault
             }
         }
 
-        public static void RevertConfigurationFor<T>()
+        public static void Configure<T>(Comparison<T> comparison)
+        {
+            Contract.Requires<ArgumentNullException>(!ReferenceEquals(comparison,null));
+            Configure(new AnonymousComparer<T>(comparison));
+        }
+
+        public static void Revert<T>()
         {
             lock (ConfigurationGate)
             {

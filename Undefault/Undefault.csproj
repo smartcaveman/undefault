@@ -70,6 +70,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnonymousComparer`1[T].cs" />
     <Compile Include="ComparisonConfigurator.cs" />
     <Compile Include="EqualityComparerCompatibleComparerDecorator`1[T].cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
