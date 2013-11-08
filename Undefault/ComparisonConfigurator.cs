@@ -57,15 +57,19 @@ namespace Undefault
             }
         }
 
-        private static class FieldFor<T>
+        private static class Constant
         {
-            private const string FieldName = "defaultComparer";
-            private const BindingFlags PrivateStatic = BindingFlags.NonPublic | BindingFlags.Static;
+            public const string FieldName = "defaultComparer";
+            public const BindingFlags PrivateStatic = BindingFlags.NonPublic | BindingFlags.Static;
+        }
+        
+        private static class FieldFor<T>
+        { 
             private static FieldInfo comparer, equalityComparer;
 
             public static FieldInfo Comparer
             {
-                get { return comparer ?? (comparer = TypeOf<Comparer<T>>.Instance.GetField(FieldName, PrivateStatic)); }
+                get { return comparer ?? (comparer = TypeOf<Comparer<T>>.Instance.GetField(Constant.FieldName, Constant.PrivateStatic)); }
             }
 
             public static FieldInfo EqualityComparer
@@ -73,7 +77,7 @@ namespace Undefault
                 get
                 {
                     return equalityComparer ??
-                           (equalityComparer = TypeOf<EqualityComparer<T>>.Instance.GetField(FieldName, PrivateStatic));
+                           (equalityComparer = TypeOf<EqualityComparer<T>>.Instance.GetField(Constant.FieldName, Constant.PrivateStatic));
                 }
             }
         }
